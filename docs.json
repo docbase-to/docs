@@ -38,7 +38,8 @@
           {
             "group": "Webhooks",
             "pages": [
-              "overview"
+              "overview",
+              "security"
             ]
           },
           {
