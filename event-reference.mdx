@@ -1,0 +1,50 @@
+---
+title: "Event Reference"
+---
+
+This page lists all the webhook events that Docbase can send to your application.
+
+Every payload follows the base structure defined in the past, but the `data` object changes depending on the event.
+
+## Document
+
+<Tabs>
+  <Tab title="document.created">
+    Triggered immediately after a file is uploaded and registered in the database.
+  </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
+</Tabs>
+
+```text
+{
+  "eventId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "eventType": "document.created",
+  "subscriptionId": "123e4567-e89b-12d3-a456-426614174000",
+  "timestamp": "2026-03-09T17:30:00.000Z",
+  "data": {
+    "documentId": "doc_88219x",
+    "workspaceId": "ws_55021",
+    "fileName": "q1_financial_report.pdf",
+    "status": "ready",
+    "metadata": {
+      "fileSize": 1048576,
+      "pageCount": 12,
+      "mimeType": "application/pdf"
+    }
+  }
+}
+```

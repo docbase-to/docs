@@ -39,7 +39,8 @@
             "group": "Webhooks",
             "pages": [
               "overview",
-              "security"
+              "security",
+              "event-reference"
             ]
           },
           {
