@@ -6,6 +6,36 @@ This page lists all the webhook events that Docbase can send to your application
 
 Every payload follows the base structure defined in the past, but the `data` object changes depending on the event.
 
+## File Cabinet
+
+<Tabs>
+  <Tab title="file_cabinet.created">
+    Triggered immediately after a file cabinet is succesfully created.
+
+    ```json
+    {
+      "eventId": "4e556a05-f873-469f-ac89-9ff35584009b",
+      "eventType": "file_cabinet.created",
+      "subscriptionId": "fd111aac-697f-45e5-9dfe-1a7d9fb53d09",
+      "timestamp": "2026-03-12T16:36:05.4036873Z",
+      "data": {
+        "id": "9168ea64-95a8-4cde-aa31-fa76442c06d2",
+        "name": "Some name",
+        "description": "Some description",
+        "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
+        "createdAt": "2026-03-12T16:36:05.3283323Z"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="file_cabinet.deleted">
+    
+  </Tab>
+  <Tab title="file_cabinet.updated">
+    
+  </Tab>
+</Tabs>
+
 ## Document
 
 <Tabs>
@@ -17,7 +47,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
   </Tab>
 </Tabs>
 
-```text
+```json
 {
   "eventId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "eventType": "document.created",
