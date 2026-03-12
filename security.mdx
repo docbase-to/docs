@@ -2,11 +2,11 @@
 title: "Security"
 ---
 
-Because webhooks can trigger critical actions in your application, you need to verify that the events are actually coming from Docbase and haven't been tampered with. 
+Because webhooks can trigger critical actions in your application, you need to verify that the events are actually coming from Docbase and haven't been tampered with.
 
 We secure our webhooks using **HMAC-SHA256** signatures.
 
-## The Header
+## Header
 
 Every webhook request sent by Docbase includes a `Docbase-Signature` HTTP header. This header contains a timestamp and the cryptographic signature.
 
