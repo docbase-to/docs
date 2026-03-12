@@ -10,14 +10,16 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Platform Guides"
+      },
+      {
+        "tab": "Developer Hub",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Fundamentals",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "authentication-and-api-keys",
+              "system-architecture"
             ]
           },
           {
@@ -63,6 +65,28 @@
               "api-reference/endpoint/delete",
               "api-reference/endpoint/webhook"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Trust & Resources",
+        "groups": [
+          {
+            "group": "Trust Center",
+            "pages": [
+              "knowledge-base-faq",
+              "enterprise-support-and-sales"
+            ]
+          },
+          {
+            "group": "Releases",
+            "pages": [
+              "changelog-and-release-notes"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": []
           }
         ]
       }
