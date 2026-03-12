@@ -24,17 +24,31 @@ Every payload follows the base structure defined in the past, but the `data` obj
         "description": "Some description",
         "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
         "createdAt": "2026-03-12T16:36:05.3283323Z"
-      }
     }
     ```
   </Tab>
   <Tab title="file_cabinet.deleted">
     
   </Tab>
-  <Tab title="file_cabinet.updated">
-    
-  </Tab>
 </Tabs>
+
+Triggered immediately after a file cabinet is succesfully updated.
+
+```json
+{
+  "eventId": "ef27413e-e603-4a9c-86cc-2508c88e31f2",
+  "eventType": "file_cabinet.updated",
+  "subscriptionId": "15270030-6f3f-4987-8355-7e00e1ead748",
+  "timestamp": "2026-03-12T18:22:09.8717925Z",
+  "data": {
+    "id": "b932c9ca-21ba-4a47-87dd-052bcaf9805f",
+    "name": "New name",
+    "description": "Test description",
+    "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
+    "createdAt": "2026-03-12T17:42:54.162972Z",
+    "updatedAt": "2026-03-12T18:22:09.8442645Z"
+}
+```
 
 ## Document
 
@@ -46,23 +60,3 @@ Every payload follows the base structure defined in the past, but the `data` obj
     
   </Tab>
 </Tabs>
-
-```json
-{
-  "eventId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "eventType": "document.created",
-  "subscriptionId": "123e4567-e89b-12d3-a456-426614174000",
-  "timestamp": "2026-03-09T17:30:00.000Z",
-  "data": {
-    "documentId": "doc_88219x",
-    "workspaceId": "ws_55021",
-    "fileName": "q1_financial_report.pdf",
-    "status": "ready",
-    "metadata": {
-      "fileSize": 1048576,
-      "pageCount": 12,
-      "mimeType": "application/pdf"
-    }
-  }
-}
-```
