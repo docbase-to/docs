@@ -133,7 +133,7 @@
   },
   "favicon": "/images/DocbaseIcon.jpg",
   "logo": {
-    "light": "/images/image(1).png",
-    "dark": "/images/DocbaseLogo2-Photoroom.png"
+    "light": "/images/DocbaseLogo2-Photoroom.png",
+    "dark": "/images/image(1).png"
   }
 }
