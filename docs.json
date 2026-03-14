@@ -132,8 +132,5 @@
     "appearance": "light"
   },
   "favicon": "/images/DocbaseIcon.jpg",
-  "logo": "/images/DocbaseLogo.jpg",
-  "background": {
-    "image": "/images/DocbaseBanner.jpg"
-  }
+  "logo": "/images/DocbaseLogo2.jpg"
 }
