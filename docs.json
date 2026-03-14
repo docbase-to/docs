@@ -135,5 +135,8 @@
   "logo": {
     "light": "/images/DocbaseLogo2-Photoroom.png",
     "dark": "/images/image(1).png"
+  },
+  "fonts": {
+    "family": "Helvetica Now Display"
   }
 }
