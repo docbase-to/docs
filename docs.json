@@ -123,5 +123,17 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
+  },
+  "banner": {
+    "content": "asdas",
+    "dismissible": false
+  },
+  "thumbnails": {
+    "appearance": "light"
+  },
+  "favicon": "/images/DocbaseIcon.jpg",
+  "logo": "/images/DocbaseLogo.jpg",
+  "background": {
+    "image": "/images/DocbaseBanner.jpg"
   }
 }
