@@ -58,7 +58,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
       "data": {
         "id": "b932c9ca-21ba-4a47-87dd-052bcaf9805f",
         "name": "Some name",
-        "description": "Somedescription",
+        "description": "Some description",
         "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
         "createdAt": "2026-03-12T17:42:54.162972Z",
         "updatedAt": "2026-03-12T18:22:09.844264Z"
@@ -71,9 +71,93 @@ Every payload follows the base structure defined in the past, but the `data` obj
 
 <Tabs>
   <Tab title="document.created">
-    Triggered immediately after a file is uploaded and registered in the database.
+    Triggered immediately after a document succesfully uploaded and registered in the database.
+
+    ```json
+    {
+      "eventId": "2c3aad3f-ddc8-4cc9-8a8b-fa6f0518a06c",
+      "eventType": "document.created",
+      "subscriptionId": "5321160f-b905-4d9a-9f59-e2bd75019aed",
+      "timestamp": "2026-03-14T13:23:28.5428512Z",
+      "data": {
+        "id": "656232a6-481e-43c0-8197-8ad831a3e29a",
+        "name": "example.jpg",
+        "contentType": "image/jpeg",
+        "fileSize": 2109373,
+        "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+        "createdAt": "2026-03-14T13:23:25.7003448Z",
+        "updatedAt": null,
+        "fileCabinet": {
+          "id": "9e221a04-f2ba-43b9-b099-f8c192059f7a",
+          "name": "Some name",
+          "description": "Some description",
+          "createdAt": "2026-03-14T13:02:05.251532Z",
+          "updatedAt": null
+        }
+      }
+    }
+    ```
   </Tab>
-  <Tab title="Tab">
-    
+  <Tab title="document.deleted">
+    Triggered immediately after a document succesfully deleted from the database.
+
+    ```json
+    {
+      "eventId": "ff149d56-a544-41bb-98a1-6e2a56aeb113",
+      "eventType": "document.deleted",
+      "subscriptionId": "3072dcb3-143f-44b7-bde0-3c9867d122a9",
+      "timestamp": "2026-03-14T13:32:24.1998932Z",
+      "data": {
+        "id": "656232a6-481e-43c0-8197-8ad831a3e29a",
+        "name": "example.jpg",
+        "contentType": "image/jpeg",
+        "fileSize": 2109373,
+        "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+        "createdAt": "2026-03-14T13:23:25.700344Z",
+        "updatedAt": null,
+        "fileCabinet": {
+          "id": "9e221a04-f2ba-43b9-b099-f8c192059f7a",
+          "name": "Some name",
+          "description": "Some description",
+          "createdAt": "2026-03-14T13:02:05.251532Z",
+          "updatedAt": null
+        }
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="document.url_generated">
+    Triggered immediately after a temporal document URL is succesfully generated.
+
+    ```json
+    {
+      "eventId": "89e9a566-d81a-4663-ab73-d54d2ca83ac8",
+      "eventType": "document.url_generated",
+      "subscriptionId": "a3184d5b-ebcb-46dc-83a0-14b4a94a6cd1",
+      "timestamp": "2026-03-14T13:26:37.529695Z",
+      "data": {
+        "url": {
+          "url": "https://docbase.blob.core.windows.net/org-781c5420-4a69-4243-a954-6438985c42ad/9e221a04-f2ba-43b9-b099-f8c192059f7a/2026/03/656232a6-481e-43c0-8197-8ad831a3e29a/sdfsdfsdf.jpg?sv=2025-11-05&se=2026-03-14T14%3A26%3A37Z&sr=b&sp=r&sig=wLD0SayTXeyMcYzhDz71oaRJCIY1kthUMTgHViOAVyI%3D",
+          "expiration": "2026-03-14T14:26:37.5154738Z"
+        },
+        "document": {
+          "id": "656232a6-481e-43c0-8197-8ad831a3e29a",
+          "name": "example.jpg",
+          "contentType": "image/jpeg",
+          "fileSize": 2109373,
+          "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+          "createdAt": "2026-03-14T13:23:25.700344Z",
+          "updatedAt": null,
+          "fileCabinet": {
+            "id": "9e221a04-f2ba-43b9-b099-f8c192059f7a",
+            "name": "Some name",
+            "description": "Some description",
+            "createdAt": "2026-03-14T13:02:05.251532Z",
+            "updatedAt": null
+          }
+        }
+      }
+    }
+    ```
   </Tab>
 </Tabs>
