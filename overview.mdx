@@ -38,7 +38,7 @@ sequenceDiagram
 2. **Event occurs**: An action happens in Docbase (e.g. a document is uploaded).
 3. **HTTP POST**: Docbase sends a signed JSON payload to your endpoint with an `X-Docbase-Signature` header.
 4. **Verify & acknowledge**: Your server verifies the signature, deduplicates using `eventId`, and returns `200 OK` immediately.
-5. **Process async**: Push the job to your own queue and process it in the background — don't do heavy work before responding.
+5. **Process async** _(your side)_: On your server, push the job to your own queue and process it in the background — don't do heavy work before responding to the webhook.
 6. **Retries**: If your endpoint doesn't return `200 OK`, Docbase retries up to 5 times over 24 hours. After all retries fail, the subscription is deactivated.**Acknowledgment:** Your server must acknowledge receipt by returning a 2xx HTTP status code.
 
 ## Delivery Guarantees & Idempotency
