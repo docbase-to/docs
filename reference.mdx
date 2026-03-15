@@ -27,7 +27,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
         <ResponseField name="timestamp" type="timestamp" required>
           Enter a description
         </ResponseField>
-        <Expandable title="data">
+        <Expandable title="data" defaultOpen="true">
           <ResponseField name="id" type="string (guid)" required>
             Enter a description
           </ResponseField>
@@ -45,7 +45,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
           </ResponseField>
         </Expandable>
       </Accordion>
-      <Accordion title="Example">
+      <Accordion defaultOpen title="Example">
         <ResponseExample>
 
         ```json response.json
