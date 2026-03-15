@@ -4,6 +4,8 @@ title: "Overview"
 
 Webhooks are the most efficient way to get real-time updates from Docbase. Instead of constantly polling our API, Docbase proactively sends an HTTP POST request to your server the moment an event occurs.
 
+## How it works
+
 ```mermaid
 sequenceDiagram
     participant App as Your App
@@ -31,8 +33,6 @@ sequenceDiagram
 
     Note over Docbase: All retries failed → subscription deactivated
 ```
-
-## How it works
 
 1. **Event Occurs:** An action happens within Docbase (e.g., a document is uploaded or AI analysis completes).
 2. **Message Queued:** We securely queue the event in our message broker (RabbitMQ) to ensure no data is lost.
