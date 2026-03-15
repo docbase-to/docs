@@ -7,21 +7,29 @@ Webhooks are the most efficient way to get real-time updates from Docbase. Inste
 ```mermaid
 sequenceDiagram
     participant App as Your App
-    participant DB as Docbase
-    participant Q as Message Queue
-    participant W as Webhook Handler
+    participant Docbase
 
-    App->>DB: POST /webhooks/subscribe
-    DB-->>App: { id, secretKey }
+    App->>Docbase: POST /webhooks/subscribe (eventType + url)
+    Docbase-->>App: { id, secretKey } save this!!!
 
-    Note over DB: Event occurs (document.created)
+    Note over App,Docbase: Later, an event occurs...
 
-    DB->>Q: Publish WebhookDispatched
-    Q->>W: WebhookTriggered message
-    W->>App: POST /your-endpoint (signed)
-    App-->>W: 200 OK
+    Docbase->>App: POST /your-endpoint
+    Note over Docbase: X-Docbase-Signature: t=<timestamp>,v1=<hmac>
 
-    Note over W: On failure → retry 1h, 3h, 6h, 12h, 24h
+    App->>App: Verify signature (timestamp + HMAC-SHA256)
+    App->>App: Check eventId for duplicates
+    App-->>Docbase: 200 OK — process async
+
+    Note over App,Docbase: If no 200 response...
+
+    Docbase->>App: Retry 1 — after 1h
+    Docbase->>App: Retry 2 — after 3h
+    Docbase->>App: Retry 3 — after 6h
+    Docbase->>App: Retry 4 — after 12h
+    Docbase->>App: Retry 5 — after 24h
+
+    Note over Docbase: All retries failed → subscription deactivated
 ```
 
 ## How it works
