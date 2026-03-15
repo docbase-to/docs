@@ -8,26 +8,26 @@ Webhooks are the most efficient way to get real-time updates from Docbase. Inste
 sequenceDiagram
     participant App as Your App
     participant Docbase
+    participant Endpoint as Your Endpoint
+    participant Queue as Your Queue
 
     App->>Docbase: POST /webhooks/subscribe (eventType + url)
     Docbase-->>App: { id, secretKey } save this!!!
 
-    Note over App,Docbase: Later, an event occurs...
+    Note over App,Queue: Later, an event occurs...
 
-    Docbase->>App: POST /your-endpoint
-    Note over Docbase: X-Docbase-Signature: t=<timestamp>,v1=<hmac>
+    Docbase->>Endpoint: POST + X-Docbase-Signature header
+    Endpoint->>Endpoint: Verify signature + duplicate eventId
+    Endpoint->>Queue: Push job (process async)
+    Endpoint-->>Docbase: 200 OK ⚡
 
-    App->>App: Verify signature (timestamp + HMAC-SHA256)
-    App->>App: Check eventId for duplicates
-    App-->>Docbase: 200 OK — process async
+    Note over Docbase,Endpoint: If no 200 response...
 
-    Note over App,Docbase: If no 200 response...
-
-    Docbase->>App: Retry 1 — after 1h
-    Docbase->>App: Retry 2 — after 3h
-    Docbase->>App: Retry 3 — after 6h
-    Docbase->>App: Retry 4 — after 12h
-    Docbase->>App: Retry 5 — after 24h
+    Docbase->>Endpoint: Retry 1 — after 1h
+    Docbase->>Endpoint: Retry 2 — after 3h
+    Docbase->>Endpoint: Retry 3 — after 6h
+    Docbase->>Endpoint: Retry 4 — after 12h
+    Docbase->>Endpoint: Retry 5 — after 24h
 
     Note over Docbase: All retries failed → subscription deactivated
 ```
