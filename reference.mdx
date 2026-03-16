@@ -45,7 +45,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
           </ResponseField>
         </Expandable>
       </Accordion>
-      <Accordion title="Example">
+      <Accordion title="Examplee">
         ```json
         {
           "eventId": "4e556a05-f873-469f-ac89-9ff35584009b",
@@ -64,23 +64,62 @@ Every payload follows the base structure defined in the past, but the `data` obj
     </AccordionGroup>
   </Tab>
   <Tab title="file_cabinet.updated">
-    Triggered immediately after a file cabinet is succesfully updated.
-
-    ```json
-    {
-      "eventId": "ef27413e-e603-4a9c-86cc-2508c88e31f2",
-      "eventType": "file_cabinet.updated",
-      "subscriptionId": "15270030-6f3f-4987-8355-7e00e1ead748",
-      "timestamp": "2026-03-12T18:22:09.8717925Z",
-      "data": {
-        "id": "b932c9ca-21ba-4a47-87dd-052bcaf9805f",
-        "name": "New name",
-        "description": "Test description",
-        "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
-        "createdAt": "2026-03-12T17:42:54.162972Z",
-        "updatedAt": "2026-03-12T18:22:09.8442645Z"
-    }
-    ```
+    <AccordionGroup>
+      <Accordion title="Use">
+        Triggered immediately after a file cabinet is successfully updated.
+      </Accordion>
+      <Accordion title="Schema">
+        <ResponseField name="eventId" type="string  (guid)" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="eventType" type="string" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="subscriptionId" type="string (guid)" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="timestamp" type="timestamp" required>
+          Enter a description
+        </ResponseField>
+        <Expandable title="data" defaultOpen="true">
+          <ResponseField name="id" type="string (guid)" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="name" type="string" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="description" type="string">
+            Enter a description
+          </ResponseField>
+          <ResponseField name="organizationId" type="string (guid)" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="createdAt" type="timestamp" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="updatedAt" type="timestamp" required>
+            Enter a description
+          </ResponseField>
+        </Expandable>
+      </Accordion>
+      <Accordion title="Example">
+        ```json
+        {
+          "eventId": "ef27413e-e603-4a9c-86cc-2508c88e31f2",
+          "eventType": "file_cabinet.updated",
+          "subscriptionId": "15270030-6f3f-4987-8355-7e00e1ead748",
+          "timestamp": "2026-03-12T18:22:09.8717925Z",
+          "data": {
+            "id": "b932c9ca-21ba-4a47-87dd-052bcaf9805f",
+            "name": "New name",
+            "description": "Test description",
+            "organizationId": "8b2ba8c4-11ac-45f6-a187-8037492ac30e",
+            "createdAt": "2026-03-12T17:42:54.162972Z",
+            "updatedAt": "2026-03-12T18:22:09.8442645Z"
+        }
+        ```
+      </Accordion>
+    </AccordionGroup>
   </Tab>
   <Tab title="file_cabinet.deleted">
     Triggered immediately after a file cabinet is succesfully deleted.
@@ -107,7 +146,7 @@ Every payload follows the base structure defined in the past, but the `data` obj
 
 <Tabs>
   <Tab title="document.created">
-    Triggered immediately after a document succesfHully uploaded and registered in the database.
+    Triggered immediately after a document is successfully uploaded and registered in the database.
 
     ```json
     {
