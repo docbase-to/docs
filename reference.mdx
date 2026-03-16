@@ -4,17 +4,15 @@ title: "Reference"
 
 This page lists all the webhook events that Docbase can send to your application.
 
-Every payload follows the base structure defined in the past, but the `data` object changes depending on the event.
-
 ## File Cabinet
 
 <Tabs>
   <Tab title="file_cabinet.created" iconType="regular">
     <AccordionGroup>
-      <Accordion defaultOpen title="Use">
+      <Accordion title="Use">
         Triggered immediately after a file cabinet is successfully created.
       </Accordion>
-      <Accordion defaultOpen title="Schema">
+      <Accordion title="Schema">
         <ResponseField name="eventId" type="string  (guid)" required>
           Enter a description
         </ResponseField>
@@ -273,5 +271,160 @@ Every payload follows the base structure defined in the past, but the `data` obj
       }
     }
     ```
+  </Tab>
+</Tabs>
+
+## Fields
+
+<Tabs>
+  <Tab title="document.field.created">
+    <AccordionGroup>
+      <Accordion title="Use">
+        Triggered automatically when a single field is succesfully created on a document.
+      </Accordion>
+      <Accordion title="Schema">
+        <ResponseField name="eventId" type="string  (guid)" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="eventType" type="string" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="subscriptionId" type="string (guid)" required>
+          Enter a description
+        </ResponseField>
+        <ResponseField name="timestamp" type="timestamp" required>
+          Enter a description
+        </ResponseField>
+        <Expandable title="data">
+          <ResponseField name="id" type="string (guid)" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="name" type="string" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="label" type="string" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="isRequired" type="boolean" required>
+            Enter a description
+          </ResponseField>
+          <ResponseField name="value" type="string">
+            Enter a description
+          </ResponseField>
+          <Expandable title="document" defaultOpen="true">
+            <ResponseField name="id" type="string (guid)" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="name" type="string (guid)" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="contentType" type="string" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="fileSize" type="integer" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="organizationId" type="string (guid)" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="createdAt" type="timestamp" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="updatedAt" type="timestamp" required>
+              Enter a description
+            </ResponseField>
+            <ResponseField name="fileCabinetId" type="string (guid)" required>
+              Enter a description
+            </ResponseField>
+          </Expandable>
+        </Expandable>
+      </Accordion>
+      <Accordion title="Example">
+        ```json
+        {
+          "eventId": "bd7ab983-f264-4975-92b5-8d8b317a6007",
+          "eventType": "document.field.created",
+          "subscriptionId": "60a15cee-f770-417d-8a0a-9fe2f4472305",
+          "timestamp": "2026-03-16T16:49:54.078574Z",
+          "data": {
+            "id": "7a48970c-7793-4793-8320-7b92c4f72f4b",
+            "name": "Test",
+            "label": "Test",
+            "isRequired": true,
+            "type": "Number",
+            "value": null,
+            "document": {
+              "id": "880265a1-bb20-42e6-9215-5454eeabf7c7",
+              "name": "Docbase Logo 2.jpg",
+              "contentType": "image/jpeg",
+              "fileSize": 39028,
+              "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+              "createdAt": "2026-03-16T16:47:14.604352Z",
+              "updatedAt": null,
+              "fileCabinetId": "9e221a04-f2ba-43b9-b099-f8c192059f7a"
+            }
+          }
+        }
+        ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  <Tab title="document.fields.created">
+    <AccordionGroup>
+      <Accordion title="Use">
+        Triggered automatically when multiple fields are succesfully  created on a document in a single batch operation.
+      </Accordion>
+      <Accordion title="Schema">
+        
+      </Accordion>
+      <Accordion title="Example">
+        ```json
+        {
+          "eventId": "8f95d719-f0fd-4e27-903c-36a638ebe6a5",
+          "eventType": "document.fields.created",
+          "subscriptionId": "98db3176-f40c-4e5c-b18b-71fe3a07187e",
+          "timestamp": "2026-03-16T16:51:48.8243931Z",
+          "data": {
+            "document": {
+              "id": "880265a1-bb20-42e6-9215-5454eeabf7c7",
+              "name": "Docbase Logo 2.jpg",
+              "contentType": "image/jpeg",
+              "fileSize": 39028,
+              "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+              "createdAt": "2026-03-16T16:47:14.604352Z",
+              "updatedAt": null,
+              "fileCabinetId": "9e221a04-f2ba-43b9-b099-f8c192059f7a"
+            },
+            "fields": [
+              {
+                "id": "d7133f00-fe72-4977-b35f-9dd9ac28ab11",
+                "name": "Field 1",
+                "label": "Field 1",
+                "isRequired": true,
+                "type": "Number",
+                "value": null
+              },
+              {
+                "id": "42dad2dd-5056-46ce-805d-af01eeace7d5",
+                "name": "Field 2",
+                "label": "Field 2",
+                "isRequired": true,
+                "type": "Number",
+                "value": null
+              },
+              {
+                "id": "2371a901-55f3-45b5-b8a6-7be3d47e5261",
+                "name": "Field 3",
+                "label": "Field 3",
+                "isRequired": true,
+                "type": "Number",
+                "value": null
+              }
+            ]
+          }
+        }
+        ```
+      </Accordion>
+    </AccordionGroup>
   </Tab>
 </Tabs>
