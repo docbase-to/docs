@@ -12,37 +12,47 @@ This page lists all the webhook events that Docbase can send to your application
       <Accordion title="Use">
         Triggered immediately after a file cabinet is successfully created.
       </Accordion>
+
       <Accordion title="Schema">
         <ResponseField name="eventId" type="string  (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="eventType" type="string" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="subscriptionId" type="string (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="timestamp" type="timestamp" required>
           Enter a description
         </ResponseField>
+
         <Expandable title="data" defaultOpen="true">
           <ResponseField name="id" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="name" type="string" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="description" type="string">
             Enter a description
           </ResponseField>
+
           <ResponseField name="organizationId" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="createdAt" type="timestamp" required>
             Enter a description
           </ResponseField>
         </Expandable>
       </Accordion>
+
       <Accordion title="Examplee">
         ```json
         {
@@ -66,40 +76,51 @@ This page lists all the webhook events that Docbase can send to your application
       <Accordion title="Use">
         Triggered immediately after a file cabinet is successfully updated.
       </Accordion>
+
       <Accordion title="Schema">
         <ResponseField name="eventId" type="string  (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="eventType" type="string" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="subscriptionId" type="string (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="timestamp" type="timestamp" required>
           Enter a description
         </ResponseField>
+
         <Expandable title="data" defaultOpen="true">
           <ResponseField name="id" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="name" type="string" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="description" type="string">
             Enter a description
           </ResponseField>
+
           <ResponseField name="organizationId" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="createdAt" type="timestamp" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="updatedAt" type="timestamp" required>
             Enter a description
           </ResponseField>
         </Expandable>
       </Accordion>
+
       <Accordion title="Example">
         ```json
         {
@@ -124,40 +145,51 @@ This page lists all the webhook events that Docbase can send to your application
       <Accordion title="Use">
         Triggered immediately after a file cabinet is successfully deleted.
       </Accordion>
+
       <Accordion title="Schema">
         <ResponseField name="eventId" type="string  (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="eventType" type="string" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="subscriptionId" type="string (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="timestamp" type="timestamp" required>
           Enter a description
         </ResponseField>
+
         <Expandable title="data" defaultOpen>
           <ResponseField name="id" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="name" type="string" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="description" type="string">
             Enter a description
           </ResponseField>
+
           <ResponseField name="organizationId" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="createdAt" type="timestamp" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="updatedAt" type="timestamp">
             Enter a description
           </ResponseField>
         </Expandable>
       </Accordion>
+
       <Accordion title="Example">
         ```json
         {
@@ -183,32 +215,108 @@ This page lists all the webhook events that Docbase can send to your application
 
 <Tabs>
   <Tab title="document.created">
-    Triggered immediately after a document is successfully uploaded and registered in the database.
+    <AccordionGroup>
+      <Accordion title="Use">
+        Triggered immediately after a document is successfully uploaded and registered in the database.
+      </Accordion>
 
-    ```json
-    {
-      "eventId": "2c3aad3f-ddc8-4cc9-8a8b-fa6f0518a06c",
-      "eventType": "document.created",
-      "subscriptionId": "5321160f-b905-4d9a-9f59-e2bd75019aed",
-      "timestamp": "2026-03-14T13:23:28.5428512Z",
-      "data": {
-        "id": "656232a6-481e-43c0-8197-8ad831a3e29a",
-        "name": "example.jpg",
-        "contentType": "image/jpeg",
-        "fileSize": 2109373,
-        "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
-        "createdAt": "2026-03-14T13:23:25.7003448Z",
-        "updatedAt": null,
-        "fileCabinet": {
-          "id": "9e221a04-f2ba-43b9-b099-f8c192059f7a",
-          "name": "Some name",
-          "description": "Some description",
-          "createdAt": "2026-03-14T13:02:05.251532Z",
-          "updatedAt": null
+      <Accordion title="Schema">
+        <ResponseField name="eventId" type="string  (guid)" required>
+          Enter a description
+        </ResponseField>
+
+        <ResponseField name="eventType" type="string" required>
+          Enter a description
+        </ResponseField>
+
+        <ResponseField name="subscriptionId" type="string (guid)" required>
+          Enter a description
+        </ResponseField>
+
+        <ResponseField name="timestamp" type="timestamp" required>
+          Enter a description
+        </ResponseField>
+
+        <Expandable title="data" defaultOpen>
+          <ResponseField name="id" type="string (guid)" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="name" type="string" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="contentType" type="string" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="fileSize" type="integer" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="organizationId" type="string (guid)" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="createdAt" type="timestamp" required>
+            Enter a description
+          </ResponseField>
+
+          <ResponseField name="updatedAt" type="timestamp">
+            Enter a description
+          </ResponseField>
+
+          <Expandable title="fileCabinet" defaultOpen>
+            <ResponseField name="id" type="string (guid)" required>
+              Enter a description
+            </ResponseField>
+
+            <ResponseField name="name" type="string" required>
+              Enter a description
+            </ResponseField>
+
+            <ResponseField name="description" type="string">
+              Enter a description
+            </ResponseField>
+
+            <ResponseField name="createdAt" type="timestamp" required>
+              Enter a description
+            </ResponseField>
+
+            <ResponseField name="updatedAt" type="timestamp">
+              Enter a description
+            </ResponseField>
+          </Expandable>
+        </Expandable>
+      </Accordion>
+
+      <Accordion title="Example">
+        ```json
+        {
+          "eventId": "2c3aad3f-ddc8-4cc9-8a8b-fa6f0518a06c",
+          "eventType": "document.created",
+          "subscriptionId": "5321160f-b905-4d9a-9f59-e2bd75019aed",
+          "timestamp": "2026-03-14T13:23:28.5428512Z",
+          "data": {
+            "id": "656232a6-481e-43c0-8197-8ad831a3e29a",
+            "name": "example.jpg",
+            "contentType": "image/jpeg",
+            "fileSize": 2109373,
+            "organizationId": "781c5420-4a69-4243-a954-6438985c42ad",
+            "createdAt": "2026-03-14T13:23:25.7003448Z",
+            "updatedAt": null,
+            "fileCabinet": {
+              "id": "9e221a04-f2ba-43b9-b099-f8c192059f7a",
+              "name": "Some name",
+              "description": "Some description",
+              "createdAt": "2026-03-14T13:02:05.251532Z",
+              "updatedAt": null
+            }
+          }
         }
-      }
-    }
-    ```
+        ```
+      </Accordion>
+    </AccordionGroup>
   </Tab>
   <Tab title="document.deleted">
     Triggered immediately after a document succesfully deleted from the database.
@@ -282,63 +390,81 @@ This page lists all the webhook events that Docbase can send to your application
       <Accordion title="Use">
         Triggered automatically when a single field is succesfully created on a document.
       </Accordion>
+
       <Accordion title="Schema">
         <ResponseField name="eventId" type="string  (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="eventType" type="string" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="subscriptionId" type="string (guid)" required>
           Enter a description
         </ResponseField>
+
         <ResponseField name="timestamp" type="timestamp" required>
           Enter a description
         </ResponseField>
+
         <Expandable title="data" defaultOpen="true">
           <ResponseField name="id" type="string (guid)" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="name" type="string" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="label" type="string" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="isRequired" type="boolean" required>
             Enter a description
           </ResponseField>
+
           <ResponseField name="value" type="string">
             Enter a description
           </ResponseField>
+
           <Expandable title="document" defaultOpen="true">
             <ResponseField name="id" type="string (guid)" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="name" type="string (guid)" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="contentType" type="string" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="fileSize" type="integer" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="organizationId" type="string (guid)" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="createdAt" type="timestamp" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="updatedAt" type="timestamp" required>
               Enter a description
             </ResponseField>
+
             <ResponseField name="fileCabinetId" type="string (guid)" required>
               Enter a description
             </ResponseField>
           </Expandable>
         </Expandable>
       </Accordion>
+
       <Accordion title="Example">
         ```json
         {
@@ -374,9 +500,10 @@ This page lists all the webhook events that Docbase can send to your application
       <Accordion title="Use">
         Triggered automatically when multiple fields are succesfully  created on a document in a single batch operation.
       </Accordion>
+
       <Accordion title="Schema">
-        
       </Accordion>
+
       <Accordion title="Example">
         ```json
         {
