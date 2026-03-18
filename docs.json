@@ -124,10 +124,6 @@
       "linkedin": "https://linkedin.com/company/mintlify"
     }
   },
-  "banner": {
-    "content": "Docbase just relased ",
-    "dismissible": true
-  },
   "thumbnails": {
     "appearance": "light"
   },
