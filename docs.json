@@ -10,18 +10,11 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Platform Guides"
+        "tab": "Platform"
       },
       {
-        "tab": "Developer Hub",
+        "tab": "Developers",
         "groups": [
-          {
-            "group": "Fundamentals",
-            "pages": [
-              "authentication",
-              "system-architecture"
-            ]
-          },
           {
             "group": "Webhooks",
             "pages": [
@@ -29,27 +22,12 @@
               "security",
               "reference"
             ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
           }
         ]
       },
       {
         "tab": "API reference",
+        "hidden": true,
         "groups": [
           {
             "group": "API documentation",
@@ -65,28 +43,6 @@
               "api-reference/endpoint/delete",
               "api-reference/endpoint/webhook"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Trust & Resources",
-        "groups": [
-          {
-            "group": "Trust Center",
-            "pages": [
-              "knowledge-base-faq",
-              "enterprise-support-and-sales"
-            ]
-          },
-          {
-            "group": "Releases",
-            "pages": [
-              "changelog-and-release-notes"
-            ]
-          },
-          {
-            "group": "Support",
-            "pages": []
           }
         ]
       }
